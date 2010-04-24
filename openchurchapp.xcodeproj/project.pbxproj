@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* openchurchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* openchurchAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		791EE75111341F1700F7E162 /* FeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EE75011341F1700F7E162 /* FeedLoader.m */; };
+		791F73E8113557CE0097FD76 /* play_screen-audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 791F73E6113557CE0097FD76 /* play_screen-audio.png */; };
+		791F73E9113557CE0097FD76 /* play_screen-video.png in Resources */ = {isa = PBXBuildFile; fileRef = 791F73E7113557CE0097FD76 /* play_screen-video.png */; };
+		791F73EE113558700097FD76 /* MediaDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F73ED113558700097FD76 /* MediaDetailViewController.m */; };
+		79203FB81181F8A8003A8FDC /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 79203FB51181F8A8003A8FDC /* appicon.png */; };
+		79203FB91181F8A8003A8FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 79203FB61181F8A8003A8FDC /* Default.png */; };
+		79203FBA1181F8A8003A8FDC /* openchurchapp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79203FB71181F8A8003A8FDC /* openchurchapp-Info.plist */; };
+		79204007118207D7003A8FDC /* media_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 79204005118207D7003A8FDC /* media_header.png */; };
+		7920401811821222003A8FDC /* connect_email_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920401311821222003A8FDC /* connect_email_button.png */; };
+		7920401911821222003A8FDC /* connect_facebook_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920401411821222003A8FDC /* connect_facebook_button.png */; };
+		7920401A11821222003A8FDC /* connect_phone_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920401511821222003A8FDC /* connect_phone_button.png */; };
+		7920401B11821222003A8FDC /* connect_twitter_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920401611821222003A8FDC /* connect_twitter_button.png */; };
+		7920401D118212DB003A8FDC /* connect_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920401C118212DB003A8FDC /* connect_bg.png */; };
+		792040301182185E003A8FDC /* main_left_button_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920402C1182185E003A8FDC /* main_left_button_default.png */; };
+		792040311182185E003A8FDC /* main_left_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920402D1182185E003A8FDC /* main_left_button_selected.png */; };
+		792040321182185E003A8FDC /* main_right_button_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920402E1182185E003A8FDC /* main_right_button_default.png */; };
+		792040331182185E003A8FDC /* main_right_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7920402F1182185E003A8FDC /* main_right_button_selected.png */; };
+		796914A2114A8B92007B4CAE /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 796914A0114A8B92007B4CAE /* NewsDetailController.m */; };
+		796914A3114A8B92007B4CAE /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796914A1114A8B92007B4CAE /* NewsDetailController.xib */; };
+		7973D7F6110E85AE00779091 /* MediaDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973D7F4110E85AE00779091 /* MediaDetail.xib */; };
+		7973D7F7110E85AE00779091 /* SermonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7973D7F5110E85AE00779091 /* SermonsViewController.xib */; };
+		7973D7FC110E85E100779091 /* SermonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7973D7FB110E85E100779091 /* SermonsViewController.m */; };
+		79757133114AE30C00C18C14 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79757131114AE30C00C18C14 /* ConnectViewController.m */; };
+		79757134114AE30C00C18C14 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79757132114AE30C00C18C14 /* ConnectViewController.xib */; };
+		7981F45D1149ECA1006C4B81 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7981F45C1149ECA1006C4B81 /* SystemConfiguration.framework */; };
+		798473F31138509B003717B7 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798473F11138509B003717B7 /* BrowserViewController.m */; };
+		798473F41138509B003717B7 /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798473F21138509B003717B7 /* BrowserViewController.xib */; };
+		798475181138C0AC003717B7 /* more_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 798475171138C0AC003717B7 /* more_header.png */; };
+		7984762711399F07003717B7 /* news_cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7984762611399F07003717B7 /* news_cell_bg.png */; };
+		79873B60112450780066CFB8 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79873B5F112450780066CFB8 /* MediaViewController.xib */; };
+		79972D4A112B4D5F00D9E96C /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 79972D45112B4D5F00D9E96C /* AppRecord.m */; };
+		79972D4B112B4D5F00D9E96C /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79972D47112B4D5F00D9E96C /* ParseOperation.m */; };
+		79972D4C112B4D5F00D9E96C /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 79972D49112B4D5F00D9E96C /* IconDownloader.m */; };
+		79972D58112B4DE500D9E96C /* MediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79972D57112B4DE500D9E96C /* MediaViewController.m */; };
+		79972D5A112B4E9900D9E96C /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D59112B4E9900D9E96C /* Placeholder.png */; };
+		79972D87112B564800D9E96C /* media.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D83112B564800D9E96C /* media.png */; };
+		79972D88112B564800D9E96C /* messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D84112B564800D9E96C /* messages.png */; };
+		79972D89112B564800D9E96C /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D85112B564800D9E96C /* more.png */; };
+		79972D8A112B564800D9E96C /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D86112B564800D9E96C /* news.png */; };
+		79972DB5112B599A00D9E96C /* play_screen_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972DB4112B599A00D9E96C /* play_screen_bg.png */; };
+		79BEE46F1120D6990025B375 /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BEE46E1120D6990025B375 /* MoreView.m */; };
+		79C22833110E8D7700DEDA14 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C22832110E8D7700DEDA14 /* MediaPlayer.framework */; };
+		79C2283F110E99B400DEDA14 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C2283E110E99B400DEDA14 /* NewsViewController.xib */; };
+		79C22847110E9B5800DEDA14 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C22846110E9B5800DEDA14 /* NewsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* openchurchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openchurchAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* openchurchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openchurchAppDelegate.m; sourceTree = "<group>"; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AB4B0D9B1048005BE974 /* sugarcreek_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sugarcreek_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		791EE74F11341F1700F7E162 /* FeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedLoader.h; sourceTree = "<group>"; };
+		791EE75011341F1700F7E162 /* FeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedLoader.m; sourceTree = "<group>"; };
+		791F73E6113557CE0097FD76 /* play_screen-audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_screen-audio.png"; sourceTree = "<group>"; };
+		791F73E7113557CE0097FD76 /* play_screen-video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_screen-video.png"; sourceTree = "<group>"; };
+		791F73EC113558700097FD76 /* MediaDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaDetailViewController.h; sourceTree = "<group>"; };
+		791F73ED113558700097FD76 /* MediaDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaDetailViewController.m; sourceTree = "<group>"; };
+		79203FB51181F8A8003A8FDC /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
+		79203FB61181F8A8003A8FDC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		79203FB71181F8A8003A8FDC /* openchurchapp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openchurchapp-Info.plist"; sourceTree = "<group>"; };
+		79203FC81181FB44003A8FDC /* openchurch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openchurch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79204005118207D7003A8FDC /* media_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = media_header.png; sourceTree = "<group>"; };
+		7920401311821222003A8FDC /* connect_email_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_email_button.png; sourceTree = "<group>"; };
+		7920401411821222003A8FDC /* connect_facebook_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_facebook_button.png; sourceTree = "<group>"; };
+		7920401511821222003A8FDC /* connect_phone_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_phone_button.png; sourceTree = "<group>"; };
+		7920401611821222003A8FDC /* connect_twitter_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_twitter_button.png; sourceTree = "<group>"; };
+		7920401C118212DB003A8FDC /* connect_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_bg.png; sourceTree = "<group>"; };
+		7920402C1182185E003A8FDC /* main_left_button_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_left_button_default.png; sourceTree = "<group>"; };
+		7920402D1182185E003A8FDC /* main_left_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_left_button_selected.png; sourceTree = "<group>"; };
+		7920402E1182185E003A8FDC /* main_right_button_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_right_button_default.png; sourceTree = "<group>"; };
+		7920402F1182185E003A8FDC /* main_right_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_right_button_selected.png; sourceTree = "<group>"; };
+		7969149F114A8B92007B4CAE /* NewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
+		796914A0114A8B92007B4CAE /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
+		796914A1114A8B92007B4CAE /* NewsDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewsDetailController.xib; path = Classes/NewsDetailController.xib; sourceTree = "<group>"; };
+		7973D7F4110E85AE00779091 /* MediaDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaDetail.xib; sourceTree = "<group>"; };
+		7973D7F5110E85AE00779091 /* SermonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SermonsViewController.xib; sourceTree = "<group>"; };
+		7973D7FA110E85E100779091 /* SermonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonsViewController.h; sourceTree = "<group>"; };
+		7973D7FB110E85E100779091 /* SermonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonsViewController.m; sourceTree = "<group>"; };
+		79757130114AE30C00C18C14 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		79757131114AE30C00C18C14 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		79757132114AE30C00C18C14 /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ConnectViewController.xib; path = Classes/ConnectViewController.xib; sourceTree = "<group>"; };
+		7981F45C1149ECA1006C4B81 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		798473F01138509B003717B7 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = ../BrowserViewController.h; sourceTree = "<group>"; };
+		798473F11138509B003717B7 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = ../BrowserViewController.m; sourceTree = "<group>"; };
+		798473F21138509B003717B7 /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowserViewController.xib; sourceTree = "<group>"; };
+		798475171138C0AC003717B7 /* more_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_header.png; sourceTree = "<group>"; };
+		7984762611399F07003717B7 /* news_cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_cell_bg.png; sourceTree = "<group>"; };
+		79873B5F112450780066CFB8 /* MediaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaViewController.xib; sourceTree = "<group>"; };
+		79972D44112B4D5F00D9E96C /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
+		79972D45112B4D5F00D9E96C /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
+		79972D46112B4D5F00D9E96C /* ParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
+		79972D47112B4D5F00D9E96C /* ParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseOperation.m; sourceTree = "<group>"; };
+		79972D48112B4D5F00D9E96C /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		79972D49112B4D5F00D9E96C /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		79972D56112B4DE500D9E96C /* MediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewController.h; sourceTree = "<group>"; };
+		79972D57112B4DE500D9E96C /* MediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewController.m; sourceTree = "<group>"; };
+		79972D59112B4E9900D9E96C /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		79972D83112B564800D9E96C /* media.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = media.png; sourceTree = "<group>"; };
+		79972D84112B564800D9E96C /* messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages.png; sourceTree = "<group>"; };
+		79972D85112B564800D9E96C /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		79972D86112B564800D9E96C /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		79972DB4112B599A00D9E96C /* play_screen_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_screen_bg.png; sourceTree = "<group>"; };
+		79BEE46D1120D6990025B375 /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
+		79BEE46E1120D6990025B375 /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
+		79C22832110E8D7700DEDA14 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		79C2283E110E99B400DEDA14 /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		79C22845110E9B5800DEDA14 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		79C22846110E9B5800DEDA14 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
+				79C22833110E8D7700DEDA14 /* MediaPlayer.framework in Frameworks */,
+				7981F45D1149ECA1006C4B81 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				79972D44112B4D5F00D9E96C /* AppRecord.h */,
+				79972D45112B4D5F00D9E96C /* AppRecord.m */,
+				798473F01138509B003717B7 /* BrowserViewController.h */,
+				798473F11138509B003717B7 /* BrowserViewController.m */,
+				79757130114AE30C00C18C14 /* ConnectViewController.h */,
+				79757131114AE30C00C18C14 /* ConnectViewController.m */,
+				79972D46112B4D5F00D9E96C /* ParseOperation.h */,
+				79972D47112B4D5F00D9E96C /* ParseOperation.m */,
+				79972D48112B4D5F00D9E96C /* IconDownloader.h */,
+				79972D49112B4D5F00D9E96C /* IconDownloader.m */,
+				7973D7FA110E85E100779091 /* SermonsViewController.h */,
+				7973D7FB110E85E100779091 /* SermonsViewController.m */,
+				1D3623240D0F684500981E51 /* openchurchAppDelegate.h */,
+				1D3623250D0F684500981E51 /* openchurchAppDelegate.m */,
+				791EE74F11341F1700F7E162 /* FeedLoader.h */,
+				791EE75011341F1700F7E162 /* FeedLoader.m */,
+				79C22845110E9B5800DEDA14 /* NewsViewController.h */,
+				79C22846110E9B5800DEDA14 /* NewsViewController.m */,
+				79BEE46D1120D6990025B375 /* MoreView.h */,
+				79BEE46E1120D6990025B375 /* MoreView.m */,
+				791F73EC113558700097FD76 /* MediaDetailViewController.h */,
+				791F73ED113558700097FD76 /* MediaDetailViewController.m */,
+				79972D56112B4DE500D9E96C /* MediaViewController.h */,
+				79972D57112B4DE500D9E96C /* MediaViewController.m */,
+				7969149F114A8B92007B4CAE /* NewsDetailController.h */,
+				796914A0114A8B92007B4CAE /* NewsDetailController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79203FC81181FB44003A8FDC /* openchurch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* sugarcreek */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = sugarcreek;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AB4B0D9B1048005BE974 /* sugarcreek_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7920402C1182185E003A8FDC /* main_left_button_default.png */,
+				7920402D1182185E003A8FDC /* main_left_button_selected.png */,
+				7920402E1182185E003A8FDC /* main_right_button_default.png */,
+				7920402F1182185E003A8FDC /* main_right_button_selected.png */,
+				7920401C118212DB003A8FDC /* connect_bg.png */,
+				7920401311821222003A8FDC /* connect_email_button.png */,
+				7920401411821222003A8FDC /* connect_facebook_button.png */,
+				7920401511821222003A8FDC /* connect_phone_button.png */,
+				7920401611821222003A8FDC /* connect_twitter_button.png */,
+				79204005118207D7003A8FDC /* media_header.png */,
+				79203FB51181F8A8003A8FDC /* appicon.png */,
+				79203FB61181F8A8003A8FDC /* Default.png */,
+				79203FB71181F8A8003A8FDC /* openchurchapp-Info.plist */,
+				798473F21138509B003717B7 /* BrowserViewController.xib */,
+				79757132114AE30C00C18C14 /* ConnectViewController.xib */,
+				79972D83112B564800D9E96C /* media.png */,
+				79972DB4112B599A00D9E96C /* play_screen_bg.png */,
+				791F73E6113557CE0097FD76 /* play_screen-audio.png */,
+				791F73E7113557CE0097FD76 /* play_screen-video.png */,
+				79972D84112B564800D9E96C /* messages.png */,
+				79972D85112B564800D9E96C /* more.png */,
+				798475171138C0AC003717B7 /* more_header.png */,
+				796914A1114A8B92007B4CAE /* NewsDetailController.xib */,
+				7984762611399F07003717B7 /* news_cell_bg.png */,
+				79972D86112B564800D9E96C /* news.png */,
+				79972D59112B4E9900D9E96C /* Placeholder.png */,
+				7973D7F4110E85AE00779091 /* MediaDetail.xib */,
+				7973D7F5110E85AE00779091 /* SermonsViewController.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				79C2283E110E99B400DEDA14 /* NewsViewController.xib */,
+				79873B5F112450780066CFB8 /* MediaViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765070DF74369002DB57D /* CoreGraphics.framework */,
+				79C22832110E8D7700DEDA14 /* MediaPlayer.framework */,
+				7981F45C1149ECA1006C4B81 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* openchurchapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "openchurchapp" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = openchurchapp;
+			productName = sugarcreek;
+			productReference = 79203FC81181FB44003A8FDC /* openchurch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Sugar Creek Baptist Church";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "openchurchapp" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* sugarcreek */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* openchurchapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				7973D7F6110E85AE00779091 /* MediaDetail.xib in Resources */,
+				7973D7F7110E85AE00779091 /* SermonsViewController.xib in Resources */,
+				79C2283F110E99B400DEDA14 /* NewsViewController.xib in Resources */,
+				79873B60112450780066CFB8 /* MediaViewController.xib in Resources */,
+				79972D5A112B4E9900D9E96C /* Placeholder.png in Resources */,
+				79972D87112B564800D9E96C /* media.png in Resources */,
+				79972D88112B564800D9E96C /* messages.png in Resources */,
+				79972D89112B564800D9E96C /* more.png in Resources */,
+				79972D8A112B564800D9E96C /* news.png in Resources */,
+				79972DB5112B599A00D9E96C /* play_screen_bg.png in Resources */,
+				791F73E8113557CE0097FD76 /* play_screen-audio.png in Resources */,
+				791F73E9113557CE0097FD76 /* play_screen-video.png in Resources */,
+				798473F41138509B003717B7 /* BrowserViewController.xib in Resources */,
+				798475181138C0AC003717B7 /* more_header.png in Resources */,
+				7984762711399F07003717B7 /* news_cell_bg.png in Resources */,
+				796914A3114A8B92007B4CAE /* NewsDetailController.xib in Resources */,
+				79757134114AE30C00C18C14 /* ConnectViewController.xib in Resources */,
+				79203FB81181F8A8003A8FDC /* appicon.png in Resources */,
+				79203FB91181F8A8003A8FDC /* Default.png in Resources */,
+				79203FBA1181F8A8003A8FDC /* openchurchapp-Info.plist in Resources */,
+				79204007118207D7003A8FDC /* media_header.png in Resources */,
+				7920401811821222003A8FDC /* connect_email_button.png in Resources */,
+				7920401911821222003A8FDC /* connect_facebook_button.png in Resources */,
+				7920401A11821222003A8FDC /* connect_phone_button.png in Resources */,
+				7920401B11821222003A8FDC /* connect_twitter_button.png in Resources */,
+				7920401D118212DB003A8FDC /* connect_bg.png in Resources */,
+				792040301182185E003A8FDC /* main_left_button_default.png in Resources */,
+				792040311182185E003A8FDC /* main_left_button_selected.png in Resources */,
+				792040321182185E003A8FDC /* main_right_button_default.png in Resources */,
+				792040331182185E003A8FDC /* main_right_button_selected.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* openchurchAppDelegate.m in Sources */,
+				7973D7FC110E85E100779091 /* SermonsViewController.m in Sources */,
+				79C22847110E9B5800DEDA14 /* NewsViewController.m in Sources */,
+				79BEE46F1120D6990025B375 /* MoreView.m in Sources */,
+				79972D4A112B4D5F00D9E96C /* AppRecord.m in Sources */,
+				79972D4B112B4D5F00D9E96C /* ParseOperation.m in Sources */,
+				79972D4C112B4D5F00D9E96C /* IconDownloader.m in Sources */,
+				79972D58112B4DE500D9E96C /* MediaViewController.m in Sources */,
+				791EE75111341F1700F7E162 /* FeedLoader.m in Sources */,
+				791F73EE113558700097FD76 /* MediaDetailViewController.m in Sources */,
+				798473F31138509B003717B7 /* BrowserViewController.m in Sources */,
+				796914A2114A8B92007B4CAE /* NewsDetailController.m in Sources */,
+				79757133114AE30C00C18C14 /* ConnectViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = openchurchapp_Prefix.pch;
+				INFOPLIST_FILE = "openchurchapp-info.plist";
+				PRODUCT_NAME = openchurch;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = openchurchapp_Prefix.pch;
+				INFOPLIST_FILE = "openchurchapp-info.plist";
+				PRODUCT_NAME = openchurch;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "openchurchapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "openchurchapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

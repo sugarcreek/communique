@@ -1,0 +1,39 @@
+The Open Church App
+===================
+
+The Open Church App is an open source iPhone/iPod Touch application created to allow Christian churches to share information and media with members.  The application currently has four main features:
+
+* Display recent messages/sermons with support for video, audio or both
+* A news tab that lists the content of an RSS feed
+* A media tab for other videos that the church would like to share with its community.
+* Two different views that give general information such as website, Facebook pages, Twitter accounts, address and phone numbers.
+
+History
+-------
+
+This application was developed at Sugar Creek Baptist Church by the Creative Creative Communications department.  Sugar Creek's application released to the iTunes Application store in March of 2010.
+
+Why Open Source?
+---------------- 
+
+* Provide an application that allows churches to leverage the iPhone/iPod Touch as a communication medium.
+* Build a community around the application and allow other developers to join and build a better application.
+
+Building The Open Church App
+----------------------------
+
+The application is written in Objective-C using Xcode against the iPhone SDK.  We have included the Xcode project file with the source code.  
+
+To Build:
+
+1. Register with Apple and download the iPhone SDK
+1. Install GIT on you Mac (an installer [Git OS X Installer](http://code.google.com/p/git-osx-installer/))
+1. Clone the repository using terminal
+	`git clone git://github.com/sugarcreek/openchurchapp.git`
+1. Open the openchurchapp.xcodeproject using XCode
+1. Build and Go
+
+
+__More information about customizing the application will be coming soon.__
+
+

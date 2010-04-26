@@ -8,6 +8,8 @@ The Open Church App is an open source iPhone/iPod Touch application created to a
 * A media tab for other videos that the church would like to share with its community.
 * Two different views that give general information such as website, Facebook pages, Twitter accounts, address and phone numbers.
 
+This code is licensed under the GPL version 2.  You can find a link to the license [here](http://www.gnu.org/licenses/gpl-2.0.html). You are welcome to use the code and modify it for use in an iPhone application for your ministry, but it is __NOT__ intended to be used for profit.  If you do use the code please consider contributing code or documentation back to the project.
+
 History
 -------
 
@@ -18,6 +20,33 @@ Why Open Source?
 
 * Provide an application that allows churches to leverage the iPhone/iPod Touch as a communication medium.
 * Build a community around the application and allow other developers to join and build a better application.
+
+Contributing
+------------
+We welcome contributions to improve the Open Church App.  We selected Github to host the code to make it easy for developer/designers to contribute features and bug fixes.  If you are interested in helping out, see instructions below:
+
+### Bugs and Feature Requests
+Please use the [issue](http://github.com/sugarcreek/openchurchapp/issues) queue for submitting bugs and feature requests.
+
+### Developers
+Simply create a github account then fork the code.  Make the bug fix or feature addition and submit a pull request.  Rick will be notified and review the change and merge it into the project.
+
+### Graphics
+
+If you want to be a geeky graphics person, download the iPhone SDK, design new graphics, update the views using Interface Builder.  Then just use the developers instructions above.  If you want to just use Photoshop then post your graphics to a site or flickr and open an issue with a link to the graphic suggestions.  Then a developer can add it to the application.
+
+Contributors
+------------
+
+[Rick Russell](mailto:rrussell@sugarcreek.net) - Project Lead/Developer  
+[Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics  
+SCBC Creative Communications Team - Application Design  
+
+iPhone Applications based on the Open Church App
+------------------------------------------------
+__If you use the Open Church App for your church, please email [iphone@sugarcreek.net](mailto:iphone@sugarcreek.net) so that we can add you to this page__
+
+Sugar Creek Baptist Church - [Sugar Creek](http://itunes.apple.com/us/app/sugar-creek/id362313367?mt=8)
 
 Building The Open Church App
 ----------------------------
@@ -34,6 +63,38 @@ To Build:
 1. Build and Go
 
 
-__More information about customizing the application will be coming soon.__
+The Application Data
+--------------------
+
+The data used in the application are based on standard RSS feeds. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the openchurchAppDelegate.m file.
+
+`
+static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
+static NSString *const SermonMediaFeed = @"http://feeds.feedburner.com/SugarCreekBaptistChurchVideoPodcastForIphone";
+static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";
+`
+
+A few custom fields have been added to a few of feeds to get thumbnails and to have a single feed for both audio and video on the MediaDetailViewController. The fields need to be added to each of the items in the feeds inside of the <item></item> tags.  Example:
+
+`
+<audioLink>http://flv-pd.sugarcreek.tv/sermons/2010/20100425.mp3</audioLink>
+<thumbnail>http://sugarcreek.tv/iphone/2010/whwwd.jpg</thumbnail>
+`
+
+The SermonMediaFeed user audioLink and thumbnail tag.  The CreativeMediaFeed uses the thumbnail tag only.
+
+If you have a suggestion on how to better handle this extra data please open a [Issue](http://github.com/sugarcreek/openchurchapp/issues) and we can discuss changing it.
+
+Video and Audio Support
+-----------------------
+
+The standard SDK media player is being used for playback of content currently. Audio can be any format that the iPhone/iPod can play (i.e. MP3/AAC).  Video can be a little tricky as we found when submitted the Sugar Creek application for approval the first time.  Bit rates on the video need to be limited based on which network you would like to allow your viewers to use.  
+
+* 3G: Quicktime H.264 320x240 at 300kbps
+* Wifi: Anything supported by the iPhone for video
+
+Currently the application is not limiting access to 3G or Wifi, but the code could be easily modified as we are checking for access to a network connection in the code.  If you plan on doing video at bit rates higher then 300 make sure you limit the video playback to Wifi only connected devices.
+
+
 
 

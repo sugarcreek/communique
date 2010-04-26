@@ -38,9 +38,9 @@ If you want to be a geeky graphics person, download the iPhone SDK, design new g
 Contributors
 ------------
 
-[Rick Russell](mailto:rrussell@sugarcreek.net) - Project Lead/Developer  
-[Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics  
-SCBC Creative Communications Team - Application Design  
+[Rick Russell](mailto:rrussell@sugarcreek.net) - Project Lead/Developer    
+[Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics    
+SCBC Creative Communications Team - Application Design     
 
 iPhone Applications based on the Open Church App
 ------------------------------------------------
@@ -57,7 +57,7 @@ To Build:
 
 1. Register with Apple and download the iPhone SDK
 1. Install GIT on you Mac (an installer [Git OS X Installer](http://code.google.com/p/git-osx-installer/))
-1. Clone the repository using terminal
+1. Clone the repository using terminal   
 	`git clone git://github.com/sugarcreek/openchurchapp.git`
 1. Open the openchurchapp.xcodeproject using XCode
 1. Build and Go

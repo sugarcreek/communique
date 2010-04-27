@@ -23,7 +23,7 @@
 
 #import "ParseOperation.h"
 #import "AppRecord.h"
-#import "openchurchAppDelegate.h"
+#import "communiqueAppDelegate.h"
 
 // string contants found in the RSS feed
 static NSString *kLink     = @"link";

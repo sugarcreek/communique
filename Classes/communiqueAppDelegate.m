@@ -21,7 +21,7 @@
  
  */
 
-#import "openchurchAppDelegate.h"
+#import "communiqueAppDelegate.h"
 #import "MediaViewController.h"
 #import "SermonsViewController.h"
 #import "NewsViewController.h"
@@ -36,7 +36,7 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 static NSString *const SermonMediaFeed = @"http://feeds.feedburner.com/SugarCreekBaptistChurchVideoPodcastForIphone";
 static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";
 
-@implementation openchurchAppDelegate
+@implementation communiqueAppDelegate
 
 @synthesize window;
 @synthesize tabBarController,sermonNavConntroller,newsNavConntroller, mediaNavConntroller, mediaViewController;

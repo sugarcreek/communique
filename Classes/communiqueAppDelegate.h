@@ -29,7 +29,7 @@
 @class SermonsViewController;
 @class NewsViewController;
 
-@interface openchurchAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+@interface communiqueAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
 	UINavigationController *sermonNavConntroller;	

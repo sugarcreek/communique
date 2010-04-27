@@ -1,7 +1,7 @@
-The Open Church App
+__Communique__ - The open church communications iPhone app.
 ===================
 
-The Open Church App is an open source iPhone/iPod Touch application created to allow Christian churches to share information and media with members.  The application currently has four main features:
+Communique is an open source iPhone/iPod Touch application created to allow Christian churches to share information and media with members.  The application currently has four main features:
 
 * Display recent messages/sermons with support for video, audio or both
 * A news tab that lists the content of an RSS feed
@@ -23,7 +23,7 @@ Why Open Source?
 
 Contributing
 ------------
-We welcome contributions to improve the Open Church App.  We selected Github to host the code to make it easy for developer/designers to contribute features and bug fixes.  If you are interested in helping out, see instructions below:
+We welcome contributions to improve the Communique. We selected Github to host the code to make it easy for developer/designers to contribute features and bug fixes.  If you are interested in helping out, see instructions below:
 
 ### Bugs and Feature Requests
 Please use the [issue](http://github.com/sugarcreek/openchurchapp/issues) queue for submitting bugs and feature requests.
@@ -42,13 +42,13 @@ Contributors
 [Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics    
 SCBC Creative Communications Team - Application Design     
 
-iPhone Applications based on the Open Church App
+iPhone Applications based on the Communique App
 ------------------------------------------------
-__If you use the Open Church App for your church, please email [iphone@sugarcreek.net](mailto:iphone@sugarcreek.net) so that we can add you to this page__
+__If you use the Communique for your church, please email [iphone@sugarcreek.net](mailto:iphone@sugarcreek.net) so that we can add you to this page__
 
 Sugar Creek Baptist Church - [Sugar Creek](http://itunes.apple.com/us/app/sugar-creek/id362313367?mt=8)
 
-Building The Open Church App
+Building Communique
 ----------------------------
 
 The application is written in Objective-C using Xcode against the iPhone SDK.  We have included the Xcode project file with the source code.  
@@ -59,14 +59,14 @@ To Build:
 1. Install GIT on you Mac (an installer [Git OS X Installer](http://code.google.com/p/git-osx-installer/))
 1. Clone the repository using terminal   
 	`git clone git://github.com/sugarcreek/openchurchapp.git`
-1. Open the openchurchapp.xcodeproject using XCode
+1. Open the communique.xcodeproject using XCode
 1. Build and Go
 
 
 The Application Data
 --------------------
 
-The data used in the application are based on standard RSS feeds. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the openchurchAppDelegate.m file.
+The data used in the application are based on standard RSS feeds. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the communiqueAppDelegate.m file.
 
 `
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";

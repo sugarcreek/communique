@@ -58,10 +58,22 @@ To Build:
 1. Register with Apple and download the iPhone SDK
 1. Install GIT on you Mac (an installer [Git OS X Installer](http://code.google.com/p/git-osx-installer/))
 1. Clone the repository using terminal   
-	`git clone git://github.com/sugarcreek/openchurchapp.git`
+	`git clone git@github.com:sugarcreek/communique.git`
 1. Open the communique.xcodeproject using XCode
 1. Build and Go
 
+Branching For Your Church
+-------------------------
+
+1. At a terminal change to the directory that you clone from GitHub
+1. Execute commands:  
+`git branch yourchurch
+git checkout yourchurch`
+1. Edit the file communique-info.plist in Xcode and change the "Bundle display name" to the name of your application. i.e. Sugar Creek
+1. Under targets in Xcode double click on communique target and select the build tab.
+1. With the Configuration of "All Configurations" selected scroll down to the "Product Name" property and change it to your application name. i.e. sugarcreek
+
+Now you are ready to make the rest of your customizations.
 
 The Application Data
 --------------------

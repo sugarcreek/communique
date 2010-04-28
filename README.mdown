@@ -67,8 +67,8 @@ Branching For Your Church
 
 1. At a terminal change to the directory that you clone from GitHub
 1. Execute commands:  
-`git branch yourchurch
-git checkout yourchurch`
+	`git branch yourchurch`
+	`git checkout yourchurch`
 1. Edit the file communique-info.plist in Xcode and change the "Bundle display name" to the name of your application. i.e. Sugar Creek
 1. Under targets in Xcode double click on communique target and select the build tab.
 1. With the Configuration of "All Configurations" selected scroll down to the "Product Name" property and change it to your application name. i.e. sugarcreek

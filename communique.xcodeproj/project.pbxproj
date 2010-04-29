@@ -52,7 +52,6 @@
 		79972D88112B564800D9E96C /* messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D84112B564800D9E96C /* messages.png */; };
 		79972D89112B564800D9E96C /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D85112B564800D9E96C /* more.png */; };
 		79972D8A112B564800D9E96C /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972D86112B564800D9E96C /* news.png */; };
-		79972DB5112B599A00D9E96C /* play_screen_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79972DB4112B599A00D9E96C /* play_screen_bg.png */; };
 		79BEE46F1120D6990025B375 /* MoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BEE46E1120D6990025B375 /* MoreView.m */; };
 		79C22833110E8D7700DEDA14 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79C22832110E8D7700DEDA14 /* MediaPlayer.framework */; };
 		79C2283F110E99B400DEDA14 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C2283E110E99B400DEDA14 /* NewsViewController.xib */; };
@@ -118,7 +117,6 @@
 		79972D84112B564800D9E96C /* messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages.png; sourceTree = "<group>"; };
 		79972D85112B564800D9E96C /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		79972D86112B564800D9E96C /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
-		79972DB4112B599A00D9E96C /* play_screen_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_screen_bg.png; sourceTree = "<group>"; };
 		79BEE46D1120D6990025B375 /* MoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreView.h; sourceTree = "<group>"; };
 		79BEE46E1120D6990025B375 /* MoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreView.m; sourceTree = "<group>"; };
 		79C22832110E8D7700DEDA14 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -224,7 +222,6 @@
 				798473F21138509B003717B7 /* BrowserViewController.xib */,
 				79757132114AE30C00C18C14 /* ConnectViewController.xib */,
 				79972D83112B564800D9E96C /* media.png */,
-				79972DB4112B599A00D9E96C /* play_screen_bg.png */,
 				791F73E6113557CE0097FD76 /* play_screen-audio.png */,
 				791F73E7113557CE0097FD76 /* play_screen-video.png */,
 				79972D84112B564800D9E96C /* messages.png */,
@@ -310,7 +307,6 @@
 				79972D88112B564800D9E96C /* messages.png in Resources */,
 				79972D89112B564800D9E96C /* more.png in Resources */,
 				79972D8A112B564800D9E96C /* news.png in Resources */,
-				79972DB5112B599A00D9E96C /* play_screen_bg.png in Resources */,
 				791F73E8113557CE0097FD76 /* play_screen-audio.png in Resources */,
 				791F73E9113557CE0097FD76 /* play_screen-video.png in Resources */,
 				798473F41138509B003717B7 /* BrowserViewController.xib in Resources */,

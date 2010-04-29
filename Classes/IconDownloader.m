@@ -25,6 +25,7 @@
 #import "AppRecord.h"
 
 #define kAppIconHeight 48
+#define kAppIconWidth 85
 
 
 @implementation IconDownloader
@@ -94,9 +95,9 @@
     // Set appIcon and clear temporary data/image
     UIImage *image = [[UIImage alloc] initWithData:self.activeDownload];
     
-    if (image.size.width != kAppIconHeight && image.size.height != kAppIconHeight)
+    if (image.size.width != kAppIconWidth && image.size.height != kAppIconHeight)
 	{
-        CGSize itemSize = CGSizeMake(kAppIconHeight, kAppIconHeight);
+        CGSize itemSize = CGSizeMake(kAppIconWidth, kAppIconHeight);
 		UIGraphicsBeginImageContext(itemSize);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];

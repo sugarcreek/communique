@@ -13,7 +13,7 @@ This code is licensed under the GPL version 2.  You can find a link to the licen
 History
 -------
 
-This application was developed at Sugar Creek Baptist Church by the Creative Creative Communications department.  Sugar Creek's application released to the iTunes Application store in March of 2010.
+This application was developed at Sugar Creek Baptist Church by the Creative Communications department.  Sugar Creek's application released to the iTunes Application store in March of 2010.
 
 Why Open Source?
 ---------------- 
@@ -58,7 +58,7 @@ To Build:
 1. Register with Apple and download the iPhone SDK
 1. Install GIT on you Mac (an installer [Git OS X Installer](http://code.google.com/p/git-osx-installer/))
 1. Clone the repository using terminal   
-	`git clone git@github.com:sugarcreek/communique.git`
+	`git clone git://github.com/sugarcreek/communique.git`
 1. Open the communique.xcodeproject using XCode
 1. Build and Go
 
@@ -81,9 +81,9 @@ The Application Data
 The data used in the application are based on standard RSS feeds. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the communiqueAppDelegate.m file.
 
 `
-static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
-static NSString *const SermonMediaFeed = @"http://feeds.feedburner.com/SugarCreekBaptistChurchVideoPodcastForIphone";
-static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";
+static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";  
+static NSString *const SermonMediaFeed = @"http://feeds.feedburner.com/SugarCreekBaptistChurchVideoPodcastForIphone";   
+static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";   
 `
 
 A few custom fields have been added to a few of feeds to get thumbnails and to have a single feed for both audio and video on the MediaDetailViewController. The fields need to be added to each of the items in the feeds inside of the <item></item> tags.  Example:

@@ -58,13 +58,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">play_screen_bg.png</string>
+							<string key="NSResourceName">gray_texture_bg.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="57427283">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{25, 188}, {275, 32}}</string>
+						<string key="NSFrame">{{25, 194}, {275, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -98,7 +98,7 @@
 					<object class="IBUITextView" id="708714476">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 227}, {285, 98}}</string>
+						<string key="NSFrame">{{20, 220}, {285, 98}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="IBUIBackgroundColor" ref="945863459"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -135,7 +135,7 @@
 					<object class="IBUIButton" id="5747117">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{67, 333}, {83, 27}}</string>
+						<string key="NSFrame">{{69, 326}, {80, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -164,7 +164,7 @@
 					<object class="IBUIButton" id="227203355">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{169, 333}, {83, 27}}</string>
+						<string key="NSFrame">{{171, 326}, {80, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -283,11 +283,11 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="198583822"/>
+							<reference ref="576414710"/>
+							<reference ref="57427283"/>
+							<reference ref="708714476"/>
 							<reference ref="5747117"/>
 							<reference ref="227203355"/>
-							<reference ref="576414710"/>
-							<reference ref="708714476"/>
-							<reference ref="57427283"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -742,15 +742,15 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>gray_texture_bg.png</string>
 				<string>play_screen-audio.png</string>
 				<string>play_screen-video.png</string>
-				<string>play_screen_bg.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{84, 27}</string>
-				<string>{83, 27}</string>
-				<string>{16, 16}</string>
+				<string>{320, 480}</string>
+				<string>{80, 32}</string>
+				<string>{80, 32}</string>
 			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">110</string>

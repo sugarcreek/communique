@@ -34,7 +34,7 @@
 
 -(IBAction) findchurchTapped
 {
-	NSURL *url = [NSURL URLWithString:@"http://maps.google.com/maps?q=Sugar+Creek+Baptist+Church,Sugar+Land,TX"];
+	NSURL *url = [NSURL URLWithString:@"http://maps.google.com/maps?cid=5980523593605467370"];
 	[[UIApplication sharedApplication] openURL:url];
 }
 

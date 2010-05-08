@@ -24,14 +24,16 @@
 #import "AppRecord.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
+#import "RotatingTabBarController.h"
 
 @class MediaViewController;
 @class SermonsViewController;
 @class NewsViewController;
+@class RotatingTabBarController;
 
 @interface communiqueAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
-    UITabBarController *tabBarController;
+    RotatingTabBarController *tabBarController;
 	UINavigationController *sermonNavConntroller;	
 	UINavigationController *newsNavConntroller;
 	UINavigationController *mediaNavConntroller;
@@ -50,7 +52,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet RotatingTabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet UINavigationController *sermonNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *newsNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *mediaNavConntroller;

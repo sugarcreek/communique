@@ -27,7 +27,7 @@
 @implementation NewsDetailController
 
 
-@synthesize newsDescription, record;
+@synthesize newsDescription, record, activityIndicator;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -46,13 +46,7 @@
 }
 */
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -74,6 +68,9 @@
 	
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES; // Adjust to taste
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -89,7 +86,42 @@
 	
 }
 
+-(IBAction)refreshTapped {
+	[newsDescription reload];
+}
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+	[activityIndicator startAnimating];	
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+	[activityIndicator stopAnimating];
+	lastRequest = nil;
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+
+	/*
+	 If the user clicks a link to a page other then the first news page, scale to fit.
+	 If it is of type UIWebViewNavigationTypeOther and it is a new request don't scale to fit.
+	*/
+	if(navigationType == UIWebViewNavigationTypeLinkClicked)
+	{
+		webView.scalesPageToFit = YES;
+		lastRequest = request;
+	}
+	
+	if(navigationType == UIWebViewNavigationTypeOther && lastRequest == nil)
+	{
+		webView.scalesPageToFit = NO;
+	}
+	
+	return YES;
+}
+	
 - (void)dealloc {
     [super dealloc];
 }

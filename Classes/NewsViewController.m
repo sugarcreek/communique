@@ -86,6 +86,11 @@
 }
 
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
 #pragma mark -
 #pragma mark Table view creation (UITableViewDataSource)
 
@@ -150,7 +155,7 @@
         AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
         
 		cell.textLabel.text = appRecord.itemTitle;
-        cell.detailTextLabel.text = [appRecord itemDateLongStyle];
+        //cell.detailTextLabel.text = [appRecord itemDateLongStyle];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         // Only load cached images; defer new downloads until scrolling ends
         if (!appRecord.itemIcon)

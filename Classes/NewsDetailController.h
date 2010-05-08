@@ -25,14 +25,19 @@
 
 @class AppRecord;
 
-@interface NewsDetailController : UIViewController {
+@interface NewsDetailController : UIViewController <UIWebViewDelegate> {
 	UIWebView  *newsDescription;
 	AppRecord *record;
+	UIActivityIndicatorView *activityIndicator;
+	NSURLRequest *lastRequest;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView  *newsDescription;
-
 @property (nonatomic, retain) IBOutlet AppRecord *record;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+
+-(IBAction) refreshTapped;
 
 
 @end

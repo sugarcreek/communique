@@ -107,6 +107,8 @@ static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";
 
 }
 
+
+
 -(Boolean)hasNetworkConnection
 {
 	Boolean retVal = NO;

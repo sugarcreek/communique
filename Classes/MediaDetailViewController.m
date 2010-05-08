@@ -58,6 +58,10 @@
 
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 -(IBAction) playVideoTapped
 {
 	NSString * storyLink = self.record.itemURLString;

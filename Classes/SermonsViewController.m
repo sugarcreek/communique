@@ -56,7 +56,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+		
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
 }
@@ -69,11 +69,28 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	
 	if (didRelease) {
 		[self.tableView reloadData];
 	}
 }
-								 
+
+/*
+-(void)viewDidAppear:(BOOL)animated
+{
+	if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)){
+        [UIView beginAnimations:@"View Flip" context:nil];
+        [UIView setAnimationDuration:0.5f];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.tabBarController.view.transform = CGAffineTransformIdentity;
+        self.tabBarController.view.transform =
+		CGAffineTransformMakeRotation(M_PI * (90) / 180.0);
+        self.view.bounds = CGRectMake(0.0f, 0.0f, 320.0f, 480.0f);
+        [UIView commitAnimations];
+    }
+}
+*/
+
 - (void)dealloc
 {
     [entries release];
@@ -89,6 +106,11 @@
     // terminate all pending download connections
     //NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
     //[allDownloads performSelector:@selector(cancelDownload)];
+}
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -

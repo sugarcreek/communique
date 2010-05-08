@@ -57,6 +57,7 @@
 		79C2283F110E99B400DEDA14 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C2283E110E99B400DEDA14 /* NewsViewController.xib */; };
 		79C22847110E9B5800DEDA14 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C22846110E9B5800DEDA14 /* NewsViewController.m */; };
 		79EA91FA1189F5830014BEA1 /* gray_texture_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79EA91F91189F5830014BEA1 /* gray_texture_bg.png */; };
+		79EE8E5D1194BCEC00A19F8A /* RotatingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		79C22845110E9B5800DEDA14 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		79C22846110E9B5800DEDA14 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		79EA91F91189F5830014BEA1 /* gray_texture_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_texture_bg.png; sourceTree = "<group>"; };
+		79EE8E5B1194BCEC00A19F8A /* RotatingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingTabBarController.h; sourceTree = "<group>"; };
+		79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				79972D57112B4DE500D9E96C /* MediaViewController.m */,
 				7969149F114A8B92007B4CAE /* NewsDetailController.h */,
 				796914A0114A8B92007B4CAE /* NewsDetailController.m */,
+				79EE8E5B1194BCEC00A19F8A /* RotatingTabBarController.h */,
+				79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				798473F31138509B003717B7 /* BrowserViewController.m in Sources */,
 				796914A2114A8B92007B4CAE /* NewsDetailController.m in Sources */,
 				79757133114AE30C00C18C14 /* ConnectViewController.m in Sources */,
+				79EE8E5D1194BCEC00A19F8A /* RotatingTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

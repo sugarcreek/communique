@@ -1,6 +1,5 @@
 /* 
- The Open Church App - an open source iPhone application for churches
- to share information with their members.
+ Communique - The open church communications iPhone app.
  
  Copyright (C) 2010  Sugar Creek Baptist Church <info at sugarcreek.net> - 
  Rick Russell <rrussell at sugarcreek.net>

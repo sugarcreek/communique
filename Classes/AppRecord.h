@@ -24,6 +24,7 @@
 {
     NSString *itemTitle;
     UIImage *itemIcon;
+	UIImage *itemThumbIcon;
     NSString *itemDate;
 	NSString *itemSummary;
     NSString *imageURLString;
@@ -33,6 +34,7 @@
 
 @property (nonatomic, retain) NSString *itemTitle;
 @property (nonatomic, retain) UIImage *itemIcon;
+@property (nonatomic, retain) UIImage *itemThumbIcon;
 @property (nonatomic, retain) NSString *itemDate;
 @property (nonatomic, retain) NSString *itemSummary;
 @property (nonatomic, retain) NSString *imageURLString;

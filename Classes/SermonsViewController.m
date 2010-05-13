@@ -187,7 +187,7 @@
         }
         else
         {
-			cell.imageView.image = appRecord.itemIcon;
+			cell.imageView.image = appRecord.itemThumbIcon;
         }
 		
     }
@@ -224,7 +224,7 @@
         {
             AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
             
-            if (!appRecord.itemIcon) // avoid the app icon download if the app already has an icon
+            if (!appRecord.itemThumbIcon) // avoid the app icon download if the app already has an icon
             {
                 [self startIconDownload:appRecord forIndexPath:indexPath];
             }
@@ -241,7 +241,7 @@
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:iconDownloader.indexPathInTableView];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         // Display the newly loaded image
-        cell.imageView.image = iconDownloader.appRecord.itemIcon;
+        cell.imageView.image = iconDownloader.appRecord.itemThumbIcon;
     }
 }
 

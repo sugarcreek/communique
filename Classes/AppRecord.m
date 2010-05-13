@@ -27,6 +27,7 @@
 
 @synthesize itemTitle;
 @synthesize itemIcon;
+@synthesize itemThumbIcon;
 @synthesize itemDate;
 @synthesize itemSummary;
 @synthesize imageURLString;
@@ -37,6 +38,7 @@
 {
     [itemTitle release];
     [itemIcon release];
+	[itemThumbIcon release];
     [itemDate release];
 	[itemSummary release];
     [imageURLString release];

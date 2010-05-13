@@ -29,11 +29,13 @@
 	AppRecord *record;
 	UIActivityIndicatorView *activityIndicator;
 	NSURLRequest *lastRequest;
+	UIBarButtonItem *refreshButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView  *newsDescription;
 @property (nonatomic, retain) IBOutlet AppRecord *record;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *refreshButton;
 
 
 -(IBAction) refreshTapped;

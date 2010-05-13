@@ -26,7 +26,7 @@
 @implementation NewsDetailController
 
 
-@synthesize newsDescription, record, activityIndicator;
+@synthesize newsDescription, record, activityIndicator, refreshButton;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -51,6 +51,7 @@
 {
 	[super viewWillAppear:animated];
 	self.navigationItem.title = self.record.itemTitle;
+	refreshButton.enabled = YES;
 	
 	NSString * storyLink = self.record.itemURLString;
 	
@@ -110,12 +111,15 @@
 	if(navigationType == UIWebViewNavigationTypeLinkClicked)
 	{
 		webView.scalesPageToFit = YES;
+		refreshButton.enabled = YES;
 		lastRequest = request;
+		
 	}
 	
 	if(navigationType == UIWebViewNavigationTypeOther && lastRequest == nil)
 	{
 		webView.scalesPageToFit = NO;
+		refreshButton.enabled = NO;
 	}
 	
 	return YES;

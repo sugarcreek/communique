@@ -23,8 +23,12 @@
 #import "IconDownloader.h"
 #import "AppRecord.h"
 
-#define kAppIconHeight 48
-#define kAppIconWidth 85
+#define kIconHeight 180
+#define kIconWidth 320
+
+#define kIconThumbHeight 48
+#define kIconThumbWidth 85
+
 
 
 @implementation IconDownloader
@@ -94,9 +98,9 @@
     // Set appIcon and clear temporary data/image
     UIImage *image = [[UIImage alloc] initWithData:self.activeDownload];
     
-    if (image.size.width != kAppIconWidth && image.size.height != kAppIconHeight)
+    if (image.size.width != kIconWidth && image.size.height != kIconHeight)
 	{
-        CGSize itemSize = CGSizeMake(kAppIconWidth, kAppIconHeight);
+        CGSize itemSize = CGSizeMake(kIconWidth, kIconHeight);
 		UIGraphicsBeginImageContext(itemSize);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];
@@ -108,6 +112,21 @@
         self.appRecord.itemIcon = image;
     }
     
+	
+	if (image.size.width != kIconThumbWidth && image.size.height != kIconThumbHeight)
+	{
+        CGSize itemSize = CGSizeMake(kIconThumbWidth, kIconThumbHeight);
+		UIGraphicsBeginImageContext(itemSize);
+		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+		[image drawInRect:imageRect];
+		self.appRecord.itemThumbIcon = UIGraphicsGetImageFromCurrentImageContext();
+		UIGraphicsEndImageContext();
+    }
+    else
+    {
+        self.appRecord.itemThumbIcon = image;
+    }
+	
     self.activeDownload = nil;
     [image release];
     

@@ -32,7 +32,7 @@
 
 
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
-static NSString *const SermonMediaFeed = @"http://feeds.feedburner.com/SugarCreekBaptistChurchVideoPodcastForIphone";
+static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_feed2.xml";
 static NSString *const NewsFeed = @"http://www.sugarcreek.net/news/feed.xml";
 
 @implementation communiqueAppDelegate

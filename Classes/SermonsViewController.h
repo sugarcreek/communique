@@ -45,7 +45,6 @@
 @property (nonatomic, retain) IBOutlet UIView *headerCell;
 
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
-- (void)playMovieAtURL:(NSURL *)theURL;
 
 -(IBAction) leftButtonTapped;
 -(IBAction) rightButtonTapped;

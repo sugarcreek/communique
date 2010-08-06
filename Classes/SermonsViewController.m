@@ -94,7 +94,6 @@
 {
     [entries release];
 	[imageDownloadsInProgress release];
-    
     [super dealloc];
 }
 
@@ -298,38 +297,7 @@
 	[self.tableView reloadData];
 }
 
--(void) playMovieAtURL: (NSURL*) theURL {
-	
-    MPMoviePlayerController* theMovie =
-	[[MPMoviePlayerController alloc] initWithContentURL: theURL];
-	
-    theMovie.scalingMode = MPMovieScalingModeAspectFill;
-    // theMovie.movieControlMode = MPMovieControlModeHidden;
-	
-    // Register for the playback finished notification
-    [[NSNotificationCenter defaultCenter]
-	 addObserver: self
-	 selector: @selector(myMovieFinishedCallback:)
-	 name: MPMoviePlayerPlaybackDidFinishNotification
-	 object: theMovie];
-	
-    // Movie playback is asynchronous, so this method returns immediately.
-    [theMovie play];
-}
 
-// When the movie is done, release the controller.
--(void) myMovieFinishedCallback: (NSNotification*) aNotification
-{
-    MPMoviePlayerController* theMovie = [aNotification object];
-	
-    [[NSNotificationCenter defaultCenter]
-	 removeObserver: self
-	 name: MPMoviePlayerPlaybackDidFinishNotification
-	 object: theMovie];
-	
-    // Release the movie instance created in playMovieAtURL:
-    [theMovie release];
-}
 
 -(IBAction) leftButtonTapped
 {

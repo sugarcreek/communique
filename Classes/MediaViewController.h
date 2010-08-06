@@ -29,7 +29,7 @@
 {
 	NSArray *entries;   // the main data model for our UITableView
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
-	
+	MPMoviePlayerViewController* theMovieController;
 	Boolean didRelease;
 
 }

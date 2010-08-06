@@ -92,10 +92,12 @@
 
 -(void) playMovieAtURL: (NSURL*) theURL {
 	
-    MPMoviePlayerController* theMovie =
-	[[MPMoviePlayerController alloc] initWithContentURL: theURL];
 	
-    theMovie.scalingMode = MPMovieScalingModeAspectFill;
+    theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
+	
+	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
+	
+	//theMovie.scalingMode = MPMovieScalingModeAspectFill;
     // theMovie.movieControlMode = MPMovieControlModeHidden;
 	
     // Register for the playback finished notification
@@ -104,9 +106,11 @@
 	 selector: @selector(myMovieFinishedCallback:)
 	 name: MPMoviePlayerPlaybackDidFinishNotification
 	 object: theMovie];
-	
+	[theMovie prepareToPlay];
     // Movie playback is asynchronous, so this method returns immediately.
-    [theMovie play];
+    [[theMovieController moviePlayer] play];
+	
+	[self.navigationController presentMoviePlayerViewControllerAnimated:theMovieController];
 }
 
 // When the movie is done, release the controller.
@@ -120,12 +124,19 @@
 	 object: theMovie];
 	
     // Release the movie instance created in playMovieAtURL:
-    [theMovie release];
+    [theMovieController release];
+	
 }
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 }
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
 
 @end

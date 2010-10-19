@@ -22,8 +22,6 @@
 
 #import "MediaDetailViewController.h"
 #import "AppRecord.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
 
 @implementation MediaDetailViewController
 
@@ -96,6 +94,17 @@
 	
     MPMoviePlayerController* theMovie =
 	[[MPMoviePlayerController alloc] initWithContentURL: theURL];
+    MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
+	
+	NSError *setCategoryErr = nil;
+	NSError *activationErr  = nil;
+	[[AVAudioSession sharedInstance]
+	 setCategory: AVAudioSessionCategoryPlayback
+	 error: &setCategoryErr];
+	[[AVAudioSession sharedInstance]
+	 setActive: YES
+	 error: &activationErr];
+
 	
     theMovie.scalingMode = MPMovieScalingModeAspectFill;
     // theMovie.movieControlMode = MPMovieControlModeHidden;

@@ -22,6 +22,8 @@
 
 #import "MediaDetailViewController.h"
 #import "AppRecord.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation MediaDetailViewController
 

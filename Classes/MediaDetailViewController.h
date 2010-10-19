@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @class AppRecord;
 
@@ -31,7 +33,7 @@
 	UITextView  *description;
 	UIButton *playVideoButton;
 	UIButton *playAudioButton;
-	
+	MPMoviePlayerViewController *theMovieController;
 	AppRecord *record;
 	
 }

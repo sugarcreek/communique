@@ -35,7 +35,6 @@
 	UIButton *playAudioButton;
 	MPMoviePlayerViewController *theMovieController;
 	AppRecord *record;
-	
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *mediaTitle;
@@ -45,6 +44,7 @@
 @property (nonatomic, retain) IBOutlet UIButton  *playAudioButton;
 
 @property (nonatomic, retain) IBOutlet AppRecord *record;
+
 
 -(IBAction) playVideoTapped;
 -(IBAction) playAudioTapped;

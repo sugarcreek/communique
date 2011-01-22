@@ -46,7 +46,7 @@
 	} else {
 		playVideoButton.hidden = NO;
 	}
-
+	
 	
 	if (self.record.itemIcon != nil) {
 		icon.image = self.record.itemIcon;
@@ -54,7 +54,7 @@
 	} else {
 		icon.hidden = YES;
 	}
-
+	
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -94,10 +94,17 @@
 	
 	
     theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
-	
 	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
 	
-	//theMovie.scalingMode = MPMovieScalingModeAspectFill;
+	NSError *setCategoryErr = nil;
+	NSError *activationErr  = nil;
+	[[AVAudioSession sharedInstance]
+	 setCategory: AVAudioSessionCategoryPlayback
+	 error: &setCategoryErr];
+	[[AVAudioSession sharedInstance]
+	 setActive: YES
+	 error: &activationErr];
+		//theMovie.scalingMode = MPMovieScalingModeAspectFill;
     // theMovie.movieControlMode = MPMovieControlModeHidden;
 	
     // Register for the playback finished notification
@@ -137,6 +144,5 @@
 {
     [super dealloc];
 }
-
 
 @end

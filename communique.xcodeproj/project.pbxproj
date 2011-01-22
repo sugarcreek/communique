@@ -58,6 +58,7 @@
 		79C22847110E9B5800DEDA14 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C22846110E9B5800DEDA14 /* NewsViewController.m */; };
 		79EA91FA1189F5830014BEA1 /* gray_texture_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79EA91F91189F5830014BEA1 /* gray_texture_bg.png */; };
 		79EE8E5D1194BCEC00A19F8A /* RotatingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */; };
+		D9A7133A12EB78CA0031A2E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		79EA91F91189F5830014BEA1 /* gray_texture_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_texture_bg.png; sourceTree = "<group>"; };
 		79EE8E5B1194BCEC00A19F8A /* RotatingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingTabBarController.h; sourceTree = "<group>"; };
 		79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingTabBarController.m; sourceTree = "<group>"; };
+		D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				79C22833110E8D7700DEDA14 /* MediaPlayer.framework in Frameworks */,
 				7981F45D1149ECA1006C4B81 /* SystemConfiguration.framework in Frameworks */,
+				D9A7133A12EB78CA0031A2E0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +259,7 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				79C22832110E8D7700DEDA14 /* MediaPlayer.framework */,
 				7981F45C1149ECA1006C4B81 /* SystemConfiguration.framework */,
+				D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,7 +294,14 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "communique" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* sugarcreek */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,7 +390,7 @@
 				INFOPLIST_FILE = "communique-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = communique;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -393,7 +404,7 @@
 				INFOPLIST_FILE = "communique-info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PRODUCT_NAME = communique;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

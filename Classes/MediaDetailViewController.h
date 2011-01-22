@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @class AppRecord;
 
@@ -31,9 +33,8 @@
 	UITextView  *description;
 	UIButton *playVideoButton;
 	UIButton *playAudioButton;
-	MPMoviePlayerViewController* theMovieController;
+	MPMoviePlayerViewController *theMovieController;
 	AppRecord *record;
-	
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *mediaTitle;

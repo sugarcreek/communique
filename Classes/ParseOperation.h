@@ -24,7 +24,7 @@
 
 @protocol ParseOperationDelegate;
 
-@interface ParseOperation : NSOperation
+@interface ParseOperation : NSOperation <NSXMLParserDelegate>
 {
 @private
     id <ParseOperationDelegate> delegate;

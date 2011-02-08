@@ -3,7 +3,8 @@ __Communique__ - The open church communications iPhone app.
 
 Communique is an open source iPhone/iPod Touch application created to allow Christian churches to share information and media with members.  The application currently has four main features:
 
-* Display recent messages/sermons with support for video, audio or both
+* Display recent messages/sermons with support for video, audio or both.
+* Multitasking while playing audio is supported. (Thanks to Cliff 2/6/2011)
 * A news tab that lists the content of an RSS feed
 * A media tab for other videos that the church would like to share with its community.
 * Two different views that give general information such as website, Facebook pages, Twitter accounts, address and phone numbers.
@@ -39,7 +40,7 @@ Contributors
 ------------
 
 [Rick Russell](mailto:rrussell@sugarcreek.net) - Project Lead/Developer     
-[mtbethel](https://github.com/mtbethel) - Development (AVFoundation updates for 4.0)      
+[Cliff Seal](https://github.com/mtbethel) - Development (AVFoundation updates for 4.0 and multitasking of audio)      
 [Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics    
 SCBC Creative Communications Team - Application Design     
 
@@ -96,7 +97,7 @@ A few custom fields have been added to a few of feeds to get thumbnails and to h
 
 The SermonMediaFeed user audioLink and thumbnail tag.  The CreativeMediaFeed uses the thumbnail tag only.
 
-If you have a suggestion on how to better handle this extra data please open a [Issue](http://github.com/sugarcreek/openchurchapp/issues) and we can discuss changing it.
+If you have a suggestion on how to better handle this extra data please open a [Issue](http://github.com/sugarcreek/communique/issues) and we can discuss changing it.
 
 Video and Audio Support
 -----------------------

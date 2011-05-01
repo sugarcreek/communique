@@ -25,8 +25,10 @@
 #import "IconDownloader.h"
 #import "FeedLoader.h"
 #import "NewsDetailController.h"
+// pull to refresh
+#import "EGORefreshTableHeaderView.h"
 
-@interface NewsViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, FeedLoaderDelegate>
+@interface NewsViewController : UITableViewController <UIScrollViewDelegate, EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, IconDownloaderDelegate, FeedLoaderDelegate>
 {
 	NSArray *entries;   // the main data model for our UITableView
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
@@ -34,6 +36,13 @@
 	NewsDetailController *newsDetailView;
 	Boolean didRelease;
 	
+    //pull to refresh
+    EGORefreshTableHeaderView *_refreshHeaderView;
+	
+	//  Reloading var should really be your tableviews datasource
+	//  Putting it here for demo purposes 
+	BOOL _reloading;
+    //
 }
 
 @property (nonatomic, retain) NSArray *entries;

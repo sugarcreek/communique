@@ -24,14 +24,24 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "IconDownloader.h"
 #import "FeedLoader.h"
+//pull to refresh
+#import "EGORefreshTableHeaderView.h"
 
-@interface MediaViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, FeedLoaderDelegate>
+@interface MediaViewController : UITableViewController <UIScrollViewDelegate, EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource, IconDownloaderDelegate, FeedLoaderDelegate>
 {
 	NSArray *entries;   // the main data model for our UITableView
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
 	MPMoviePlayerViewController* theMovieController;
 	Boolean didRelease;
-
+    
+    //pull to refresh
+    EGORefreshTableHeaderView *_refreshHeaderView;
+	
+	//  Reloading var should really be your tableviews datasource
+	//  Putting it here for demo purposes 
+	BOOL _reloading;
+    //
+    
 }
 
 @property (nonatomic, retain) NSArray *entries;

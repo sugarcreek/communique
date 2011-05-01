@@ -18,6 +18,30 @@
  with this program; if not, write to the Free Software Foundation, Inc.,
  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  
+ Pull to refresh additions noted with "pull to refresh"
+ 
+ //  Created by Devin Doty on 10/16/09October16.
+ //  Copyright enormego 2009. All rights reserved.
+ //
+ //  Permission is hereby granted, free of charge, to any person obtaining a copy
+ //  of this software and associated documentation files (the "Software"), to deal
+ //  in the Software without restriction, including without limitation the rights
+ //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ //  copies of the Software, and to permit persons to whom the Software is
+ //  furnished to do so, subject to the following conditions:
+ //
+ //  The above copyright notice and this permission notice shall be included in
+ //  all copies or substantial portions of the Software.
+ //
+ //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ //  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ //  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ //  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ //  THE SOFTWARE.
+ 
+ 
  */
 
 #import "SermonsViewController.h"
@@ -55,11 +79,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-		
+    
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
+    
+    //pull to refresh
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		[view release];
+        
+    }
+    
+    [_refreshHeaderView refreshLastUpdatedDate];
+    //
 }
 
+//pull to refresh
 - (void)viewDidUnload
 {
 	//self.entries = nil;
@@ -75,20 +114,20 @@
 }
 
 /*
--(void)viewDidAppear:(BOOL)animated
-{
-	if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)){
-        [UIView beginAnimations:@"View Flip" context:nil];
-        [UIView setAnimationDuration:0.5f];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        self.tabBarController.view.transform = CGAffineTransformIdentity;
-        self.tabBarController.view.transform =
-		CGAffineTransformMakeRotation(M_PI * (90) / 180.0);
-        self.view.bounds = CGRectMake(0.0f, 0.0f, 320.0f, 480.0f);
-        [UIView commitAnimations];
-    }
-}
-*/
+ -(void)viewDidAppear:(BOOL)animated
+ {
+ if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)){
+ [UIView beginAnimations:@"View Flip" context:nil];
+ [UIView setAnimationDuration:0.5f];
+ [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+ self.tabBarController.view.transform = CGAffineTransformIdentity;
+ self.tabBarController.view.transform =
+ CGAffineTransformMakeRotation(M_PI * (90) / 180.0);
+ self.view.bounds = CGRectMake(0.0f, 0.0f, 320.0f, 480.0f);
+ [UIView commitAnimations];
+ }
+ }
+ */
 
 - (void)dealloc
 {
@@ -137,7 +176,7 @@
     // add a placeholder cell while waiting on table data
     int nodeCount = [self.entries count];
 	
-
+    
 	
 	if (nodeCount == 0 && indexPath.row == 0)
 	{
@@ -194,6 +233,67 @@
     return cell;
 }
 
+//pull to refresh
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
+//pull to refresh
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+//pull to refresh
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+/*
+ - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+ //added following line to existing section below
+ [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+ 
+ }
+ */
+//pull to refresh
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+//pull to refresh
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+//pull to refresh
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+
+//
+
 
 #pragma mark -
 #pragma mark Table cell image support
@@ -249,11 +349,11 @@
 	// Navigation logic
 	
 	int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
-
+    
 	// Do we have any records yet?
 	if ([entries count] > 0) {
 		
-	
+        
 		AppRecord * entry = [entries objectAtIndex: storyIndex];
 		
 		//NSString * storyLink = entry.itemURLString;
@@ -283,6 +383,8 @@
 	{
         [self loadImagesForOnscreenRows];
     }
+    //pull to refresh
+    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -308,5 +410,7 @@
 {
 	[self.navigationController pushViewController:connectViewController animated:YES];
 }
+
+
 
 @end

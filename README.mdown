@@ -39,16 +39,23 @@ If you want to be a geeky graphics person, download the iPhone SDK, design new g
 Contributors
 ------------
 
-[Rick Russell](mailto:rrussell@sugarcreek.net) - Project Lead/Developer     
+[Rick Russell](mailto:rick@rickrussell.org) - Project Lead/Developer     
 [Cliff Seal](https://github.com/mtbethel) - Development (AVFoundation updates for 4.0 and multitasking of audio)      
 [Bobby Chandler](mailto:bchandler@sugarcreek.net) - Graphics    
 SCBC Creative Communications Team - Application Design     
 
 iPhone Applications based on the Communique App
 ------------------------------------------------
-__If you use the Communique for your church, please email [iphone@sugarcreek.net](mailto:iphone@sugarcreek.net) so that we can add you to this page__
+__If you use the Communique for your church, please email [Rick Russell](mailto:rick@rickrussell.org) so that we can add you to this page__
 
-Sugar Creek Baptist Church - [Sugar Creek](http://itunes.apple.com/us/app/sugar-creek/id362313367?mt=8)
+Sugar Creek Baptist Church - [Sugar Creek](http://itunes.apple.com/us/app/sugar-creek/id362313367?mt=8)     
+Mt. Bethel UMC - [Mt. Bethel](http://itunes.apple.com/us/app/mt.-bethel-umc/id376649859?mt=8)     
+Journey Church - [Journey SC](http://itunes.apple.com/us/app/journey-sc/id425587072?mt=8)     
+Torquay Christian Fellowship - [TCF Church](http://itunes.apple.com/us/app/tcf-church/id432444608?mt=8)     
+St. Marks Church - [St Marks Church](http://itunes.apple.com/us/app/st-marks-church/id451989371?mt=8)     
+3Rock Youth - [3Rock Youth](http://itunes.apple.com/us/app/3rock-youth/id465940635?mt=8)
+Tiny Ark - [Tiny Arc](http://itunes.apple.com/us/app/tiny-ark/id438455297?mt=8)     
+
 
 Building Communique
 ----------------------------

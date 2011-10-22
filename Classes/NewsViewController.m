@@ -21,7 +21,8 @@
  */
 
 #import "NewsViewController.h"
-#import "AppRecord.h"
+#import "NSString+HTML.h"
+#import "MWFeedParser.h"
 
 #define kCustomRowHeight   92.0
 #define kCustomRowCount     7
@@ -36,7 +37,7 @@
 
 @implementation NewsViewController
 
-@synthesize entries;
+@synthesize itemsToDisplay;
 @synthesize imageDownloadsInProgress;
 @synthesize newsDetailView;
 
@@ -56,6 +57,20 @@
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
 	self.tableView.backgroundColor = [UIColor clearColor];
+    
+    formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateStyle:NSDateFormatterShortStyle];
+	[formatter setTimeStyle:NSDateFormatterShortStyle];
+	parsedItems = [[NSMutableArray alloc] init];
+	self.itemsToDisplay = [NSArray array];
+    
+    NSURL *feedURL = [NSURL URLWithString:@"https://github.com/sugarcreek/communique/commits/master.atom"];
+	feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
+	feedParser.delegate = self;
+	feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
+	feedParser.connectionType = ConnectionTypeAsynchronously;
+	[feedParser parse];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -68,7 +83,10 @@
 
 - (void)dealloc
 {
-    [entries release];
+	[formatter release];
+	[parsedItems release];
+	[itemsToDisplay release];
+	[feedParser release];
 	[imageDownloadsInProgress release];
     
     [super dealloc];
@@ -96,14 +114,8 @@
 // customize the number of rows in the table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	int count = [entries count];
-	
-	// ff there's no data yet, return enough rows to fill the screen
-    if (count == 0)
-	{
-        return kCustomRowCount;
-    }
-    return count;
+    return itemsToDisplay.count;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +127,7 @@
 
     
     // add a placeholder cell while waiting on table data
-    int nodeCount = [self.entries count];
+    int nodeCount = [self.itemsToDisplay count];
 	
 	if (nodeCount == 0 && indexPath.row == 0)
 	{
@@ -151,12 +163,12 @@
     if (nodeCount > 0)
 	{
         // Set up the cell...
-        AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
+        MWFeedItem *item = [itemsToDisplay objectAtIndex:indexPath.row];
         
-		cell.textLabel.text = appRecord.itemTitle;
+		cell.textLabel.text = item.title ? [item.title stringByConvertingHTMLToPlainText] : @"[No Title]";
         //cell.detailTextLabel.text = [appRecord itemDateLongStyle];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        // Only load cached images; defer new downloads until scrolling ends
+/*        // Only load cached images; defer new downloads until scrolling ends
         if (!appRecord.itemIcon)
         {
             if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
@@ -172,7 +184,7 @@
         {
 			cell.imageView.image = appRecord.itemIcon;
         }
-		
+*/		
     }
 
     return cell;
@@ -200,7 +212,7 @@
 // this method is used in case the user scrolled into a set of cells that don't have their app icons yet
 - (void)loadImagesForOnscreenRows
 {
-    if ([self.entries count] > 0)
+/*    if ([self.entries count] > 0)
     {
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths)
@@ -212,7 +224,7 @@
                 [self startIconDownload:appRecord forIndexPath:indexPath];
             }
         }
-    }
+    } */
 }
 
 // called by our ImageDownloader when an icon is ready to be displayed
@@ -224,7 +236,7 @@
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:iconDownloader.indexPathInTableView];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         // Display the newly loaded image
-        cell.imageView.image = iconDownloader.appRecord.itemIcon;
+        //cell.imageView.image = iconDownloader.appRecord.itemIcon;
     }
 }
 
@@ -235,9 +247,9 @@
 	int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
 
 	// Do we have any records yet?
-	if ([entries count] > 0) {
+	if ([itemsToDisplay count] > 0) {
 		
-		AppRecord * entry = [entries objectAtIndex: storyIndex];
+		MWFeedItem *item = [itemsToDisplay objectAtIndex: storyIndex];
 		
 		//NSString * storyLink = entry.itemURLString;
 		
@@ -251,13 +263,49 @@
 		//[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 		//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:storyLink]];
 		
-		newsDetailView.record = entry;
+		newsDetailView.item = item;
 		newsDetailView.hidesBottomBarWhenPushed = YES;
 		[self.navigationController pushViewController:newsDetailView animated:YES];
 	}
 	
 }
 
+#pragma mark -
+#pragma mark MWFeedParserDelegate
+
+- (void)feedParserDidStart:(MWFeedParser *)parser {
+	NSLog(@"Started Parsing: %@", parser.url);
+}
+
+- (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
+	NSLog(@"Parsed Feed Info: “%@”", info.title);
+	//self.title = info.title;
+}
+
+- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
+	NSLog(@"Parsed Feed Item: “%@”", item.title);
+	if (item) [parsedItems addObject:item];	
+}
+
+- (void)feedParserDidFinish:(MWFeedParser *)parser {
+	NSLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
+	self.itemsToDisplay = [parsedItems sortedArrayUsingDescriptors:
+						   [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"date" 
+																				 ascending:NO] autorelease]]];
+	self.tableView.userInteractionEnabled = YES;
+	self.tableView.alpha = 1;
+	[self.tableView reloadData];
+}
+
+- (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
+	NSLog(@"Finished Parsing With Error: %@", error);
+	self.title = @"Failed";
+	self.itemsToDisplay = [NSArray array];
+	[parsedItems removeAllObjects];
+	self.tableView.userInteractionEnabled = YES;
+	self.tableView.alpha = 1;
+	[self.tableView reloadData];
+}
 
 #pragma mark -
 #pragma mark Deferred image loading (UIScrollViewDelegate)
@@ -280,7 +328,7 @@
 // Implementation of the FromViewDelegate
 - (void)reloadView:(NSMutableArray *)records 
 {
-	self.entries = records;
+	//self.entries = records;
 	[self.tableView reloadData];
 }
 

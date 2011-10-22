@@ -33,7 +33,7 @@
 
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
 static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_feed.xml";
-static NSString *const NewsFeed = @"http://feeds2.feedburner.com/churchmag";
+//static NSString *const NewsFeed = @"http://feeds2.feedburner.com/churchmag";
 
 @implementation communiqueAppDelegate
 
@@ -83,11 +83,11 @@ static NSString *const NewsFeed = @"http://feeds2.feedburner.com/churchmag";
 		//
 		NSAssert(sermonsFeedLoader.listFeedConnection != nil, @"Failure to create URL connection.");
 		
-		newsFeedLoader = [[FeedLoader alloc] init];
-		newsFeedLoader.delegate = newsViewController;
+//		newsFeedLoader = [[FeedLoader alloc] init];
+//		newsFeedLoader.delegate = newsViewController;
 		
-		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:NewsFeed]];
-		newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
+//		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:NewsFeed]];
+//		newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
 		
 		// Test the validity of the connection object. The most likely reason for the connection object
 		// to be nil is a malformed URL, which is a programmatic error easily detected during development
@@ -97,7 +97,7 @@ static NSString *const NewsFeed = @"http://feeds2.feedburner.com/churchmag";
 		//NSAssert(sermonsViewController.sermonsListFeedConnection != nil, @"Failure to create URL connection.");
 		
 		// show in the status bar that network activity is starting
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+//		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	} else {
 		tabBarController.selectedIndex = 3;
 		

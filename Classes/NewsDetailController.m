@@ -26,7 +26,7 @@
 @implementation NewsDetailController
 
 
-@synthesize newsDescription, record, activityIndicator, refreshButton;
+@synthesize newsDescription, item, activityIndicator, refreshButton;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -50,10 +50,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	self.navigationItem.title = self.record.itemTitle;
+	self.navigationItem.title = self.item.title;
 	refreshButton.enabled = YES;
 	
-	NSString * storyLink = self.record.itemURLString;
+	NSString * storyLink = self.item.link;
 	
 	// clean up the link - get rid of spaces, returns, and tabs...
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -64,7 +64,7 @@
 	// open in Safari
 	//[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 	//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:storyLink]];
-	[newsDescription loadHTMLString:self.record.itemSummary baseURL:[NSURL URLWithString:storyLink]];
+	[newsDescription loadHTMLString:self.item.summary baseURL:[NSURL URLWithString:storyLink]];
 	
 }
 
@@ -82,7 +82,7 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-	self.record = nil;
+	self.item = nil;
 	
 }
 

@@ -57,6 +57,20 @@
     
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
+    
+    //pull to refresh
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		[view release];
+        
+    }
+    
+    [_refreshHeaderView refreshLastUpdatedDate];
+    //
 }
 
 - (void)dealloc
@@ -127,7 +141,7 @@
             cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-
+        
 		cell.detailTextLabel.text = @"Loading…";
 		
 		return cell;
@@ -141,7 +155,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-
+    
     // Leave cells empty if there's no data yet
     if (nodeCount > 0)
 	{
@@ -163,13 +177,75 @@
         }
         else
         {
-           cell.imageView.image = appRecord.itemThumbIcon;
+            cell.imageView.image = appRecord.itemThumbIcon;
         }
-
+        
     }
     
     return cell;
 }
+
+//pull to refresh
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
+//pull to refresh
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
+}
+
+//pull to refresh
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+/*
+ - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+ //added following line to existing section below
+ [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+ 
+ }
+ */
+//pull to refresh
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+//pull to refresh
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+//pull to refresh
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+
+//
+
 
 
 #pragma mark -
@@ -226,10 +302,10 @@
 	// Navigation logic
 	
 	int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
-
+    
 	// Do we have any records yet?
 	if ([entries count] > 0) {
-	
+        
 		AppRecord * entry = [entries objectAtIndex: storyIndex];
 		
 		NSString * storyLink = entry.itemURLString;
@@ -244,7 +320,7 @@
 		[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 		// [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storyLink]];
 	}
-		
+    
 }
 
 
@@ -258,6 +334,8 @@
 	{
         [self loadImagesForOnscreenRows];
     }
+    //pull to refresh
+    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

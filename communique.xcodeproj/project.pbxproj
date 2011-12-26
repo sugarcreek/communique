@@ -40,7 +40,6 @@
 		7981F45D1149ECA1006C4B81 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7981F45C1149ECA1006C4B81 /* SystemConfiguration.framework */; };
 		798473F31138509B003717B7 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798473F11138509B003717B7 /* BrowserViewController.m */; };
 		798473F41138509B003717B7 /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798473F21138509B003717B7 /* BrowserViewController.xib */; };
-		798475181138C0AC003717B7 /* more_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 798475171138C0AC003717B7 /* more_header.png */; };
 		7984762711399F07003717B7 /* news_cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7984762611399F07003717B7 /* news_cell_bg.png */; };
 		79873B60112450780066CFB8 /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79873B5F112450780066CFB8 /* MediaViewController.xib */; };
 		79972D4A112B4D5F00D9E96C /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 79972D45112B4D5F00D9E96C /* AppRecord.m */; };
@@ -58,6 +57,17 @@
 		79C22847110E9B5800DEDA14 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C22846110E9B5800DEDA14 /* NewsViewController.m */; };
 		79EA91FA1189F5830014BEA1 /* gray_texture_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79EA91F91189F5830014BEA1 /* gray_texture_bg.png */; };
 		79EE8E5D1194BCEC00A19F8A /* RotatingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */; };
+		9D5BE8D2136CDE9C00CA3414 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D5BE8D1136CDE9C00CA3414 /* QuartzCore.framework */; };
+		9D5BE8EC136CE14100CA3414 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E4136CE14100CA3414 /* whiteArrow@2x.png */; };
+		9D5BE8ED136CE14100CA3414 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E5136CE14100CA3414 /* whiteArrow.png */; };
+		9D5BE8EE136CE14100CA3414 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E6136CE14100CA3414 /* grayArrow@2x.png */; };
+		9D5BE8EF136CE14100CA3414 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E7136CE14100CA3414 /* grayArrow.png */; };
+		9D5BE8F0136CE14100CA3414 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E8136CE14100CA3414 /* blueArrow@2x.png */; };
+		9D5BE8F1136CE14100CA3414 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8E9136CE14100CA3414 /* blueArrow.png */; };
+		9D5BE8F2136CE14100CA3414 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8EA136CE14100CA3414 /* blackArrow@2x.png */; };
+		9D5BE8F3136CE14100CA3414 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8EB136CE14100CA3414 /* blackArrow.png */; };
+		9D5BE8F6136CE29D00CA3414 /* more_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5BE8F5136CE29D00CA3414 /* more_header.png */; };
+		9D5BE8F9136CE3B700CA3414 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5BE8F8136CE3B700CA3414 /* EGORefreshTableHeaderView.m */; };
 		D9A7133A12EB78CA0031A2E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +114,6 @@
 		798473F01138509B003717B7 /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = ../BrowserViewController.h; sourceTree = "<group>"; };
 		798473F11138509B003717B7 /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = ../BrowserViewController.m; sourceTree = "<group>"; };
 		798473F21138509B003717B7 /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowserViewController.xib; sourceTree = "<group>"; };
-		798475171138C0AC003717B7 /* more_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_header.png; sourceTree = "<group>"; };
 		7984762611399F07003717B7 /* news_cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_cell_bg.png; sourceTree = "<group>"; };
 		79873B5F112450780066CFB8 /* MediaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaViewController.xib; sourceTree = "<group>"; };
 		79972D44112B4D5F00D9E96C /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
@@ -129,6 +138,18 @@
 		79EA91F91189F5830014BEA1 /* gray_texture_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_texture_bg.png; sourceTree = "<group>"; };
 		79EE8E5B1194BCEC00A19F8A /* RotatingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingTabBarController.h; sourceTree = "<group>"; };
 		79EE8E5C1194BCEC00A19F8A /* RotatingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingTabBarController.m; sourceTree = "<group>"; };
+		9D5BE8D1136CDE9C00CA3414 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9D5BE8E4136CE14100CA3414 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		9D5BE8E5136CE14100CA3414 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		9D5BE8E6136CE14100CA3414 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		9D5BE8E7136CE14100CA3414 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		9D5BE8E8136CE14100CA3414 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		9D5BE8E9136CE14100CA3414 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		9D5BE8EA136CE14100CA3414 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		9D5BE8EB136CE14100CA3414 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		9D5BE8F5136CE29D00CA3414 /* more_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_header.png; sourceTree = "<group>"; };
+		9D5BE8F7136CE3B600CA3414 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		9D5BE8F8136CE3B700CA3414 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -137,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5BE8D2136CDE9C00CA3414 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -152,6 +174,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9D5BE8F7136CE3B600CA3414 /* EGORefreshTableHeaderView.h */,
+				9D5BE8F8136CE3B700CA3414 /* EGORefreshTableHeaderView.m */,
 				79972D44112B4D5F00D9E96C /* AppRecord.h */,
 				79972D45112B4D5F00D9E96C /* AppRecord.m */,
 				798473F01138509B003717B7 /* BrowserViewController.h */,
@@ -216,6 +240,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D5BE8F5136CE29D00CA3414 /* more_header.png */,
+				9D5BE8E4136CE14100CA3414 /* whiteArrow@2x.png */,
+				9D5BE8E5136CE14100CA3414 /* whiteArrow.png */,
+				9D5BE8E6136CE14100CA3414 /* grayArrow@2x.png */,
+				9D5BE8E7136CE14100CA3414 /* grayArrow.png */,
+				9D5BE8E8136CE14100CA3414 /* blueArrow@2x.png */,
+				9D5BE8E9136CE14100CA3414 /* blueArrow.png */,
+				9D5BE8EA136CE14100CA3414 /* blackArrow@2x.png */,
+				9D5BE8EB136CE14100CA3414 /* blackArrow.png */,
 				79EA91F91189F5830014BEA1 /* gray_texture_bg.png */,
 				791C8AC81187975C00DA4139 /* communique-Info.plist */,
 				7920402C1182185E003A8FDC /* main_left_button_default.png */,
@@ -237,7 +270,6 @@
 				791F73E7113557CE0097FD76 /* play_screen-video.png */,
 				79972D84112B564800D9E96C /* messages.png */,
 				79972D85112B564800D9E96C /* more.png */,
-				798475171138C0AC003717B7 /* more_header.png */,
 				796914A1114A8B92007B4CAE /* NewsDetailController.xib */,
 				7984762611399F07003717B7 /* news_cell_bg.png */,
 				79972D86112B564800D9E96C /* news.png */,
@@ -254,6 +286,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D5BE8D1136CDE9C00CA3414 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
@@ -330,7 +363,6 @@
 				791F73E8113557CE0097FD76 /* play_screen-audio.png in Resources */,
 				791F73E9113557CE0097FD76 /* play_screen-video.png in Resources */,
 				798473F41138509B003717B7 /* BrowserViewController.xib in Resources */,
-				798475181138C0AC003717B7 /* more_header.png in Resources */,
 				7984762711399F07003717B7 /* news_cell_bg.png in Resources */,
 				796914A3114A8B92007B4CAE /* NewsDetailController.xib in Resources */,
 				79757134114AE30C00C18C14 /* ConnectViewController.xib in Resources */,
@@ -348,6 +380,15 @@
 				792040331182185E003A8FDC /* main_right_button_selected.png in Resources */,
 				791C8AC91187975C00DA4139 /* communique-Info.plist in Resources */,
 				79EA91FA1189F5830014BEA1 /* gray_texture_bg.png in Resources */,
+				9D5BE8EC136CE14100CA3414 /* whiteArrow@2x.png in Resources */,
+				9D5BE8ED136CE14100CA3414 /* whiteArrow.png in Resources */,
+				9D5BE8EE136CE14100CA3414 /* grayArrow@2x.png in Resources */,
+				9D5BE8EF136CE14100CA3414 /* grayArrow.png in Resources */,
+				9D5BE8F0136CE14100CA3414 /* blueArrow@2x.png in Resources */,
+				9D5BE8F1136CE14100CA3414 /* blueArrow.png in Resources */,
+				9D5BE8F2136CE14100CA3414 /* blackArrow@2x.png in Resources */,
+				9D5BE8F3136CE14100CA3414 /* blackArrow.png in Resources */,
+				9D5BE8F6136CE29D00CA3414 /* more_header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +414,7 @@
 				796914A2114A8B92007B4CAE /* NewsDetailController.m in Sources */,
 				79757133114AE30C00C18C14 /* ConnectViewController.m in Sources */,
 				79EE8E5D1194BCEC00A19F8A /* RotatingTabBarController.m in Sources */,
+				9D5BE8F9136CE3B700CA3414 /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,12 @@
 
 @implementation MoreView
 
+-(IBAction) imageTapped
+{
+    NSURL *url = [NSURL URLWithString:@"http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=podcasts&restrict=true&submit=media&term=sugar%20creek%20baptist%20church"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 -(IBAction) churchsiteTapped
 {
 	NSURL *url = [NSURL URLWithString:@"http://www.sugarcreek.net"];

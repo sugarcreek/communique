@@ -1,12 +1,24 @@
-# xcode noise
-build/*
+# Mac OS X
+*.DS_Store
+
+# Xcode
 *.pbxuser
 *.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
 
-# old skool
-.svn
+# Generated files
+*.o
+*.pyc
 
-# osx noise
-.DS_Store
-profile
 
+#Python modules
+MANIFEST
+dist/
+build/
+
+# Backup files
+*~.nib

@@ -1,12 +1,33 @@
-# xcode noise
-build/*
-*.pbxuser
-*.mode1v3
+#
+# Xcode
+#
 
-# old skool
-.svn
-
-# osx noise
-.DS_Store
+build/
+*~.nib/
+*.moved-aside
 profile
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspective
+!default.perspective
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+#
+# OS X noise
+#
+
+.DS_Store
+Icon
+.Spotlight-V100
+.Trashes
 

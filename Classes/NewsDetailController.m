@@ -59,7 +59,7 @@
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@"	" withString:@""];
-	//newsDescription.scalesPageToFit = YES;
+	newsDescription.scalesPageToFit = YES;
 	NSLog(@"news: %@", storyLink);
 	// open in Safari
 	//[self playMovieAtURL:[NSURL URLWithString:storyLink]];

@@ -29,7 +29,6 @@
 @interface NewsViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, MWFeedParserDelegate>
 {
 	// Parsing
-	MWFeedParser *feedParser;
 	NSMutableArray *parsedItems;
 	
 	// Displaying
@@ -43,10 +42,9 @@
 	
 }
 
-@property (nonatomic, retain) NSArray *itemsToDisplay;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 @property (nonatomic, retain) IBOutlet NewsDetailController *newsDetailView;
-
+@property (nonatomic, retain) IBOutlet NSArray *itemsToDisplay;
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
 
 @end

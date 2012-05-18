@@ -65,6 +65,7 @@
 		A093C67B145335E5009B2DCD /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A093C679145335E5009B2DCD /* NSString+HTML.m */; };
 		A093C67F14533611009B2DCD /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = A093C67E14533611009B2DCD /* NSString+XMLEntities.m */; };
 		A093C68314533668009B2DCD /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A093C68214533668009B2DCD /* GTMNSString+HTML.m */; };
+		A0F608811566CDA700EDFE65 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = A0F608801566CDA700EDFE65 /* README.mdown */; };
 		D9A7133A12EB78CA0031A2E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		A093C67E14533611009B2DCD /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		A093C68114533668009B2DCD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		A093C68214533668009B2DCD /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		A0F608801566CDA700EDFE65 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		D9A7133912EB78CA0031A2E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -240,6 +242,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0F608801566CDA700EDFE65 /* README.mdown */,
 				79EA91F91189F5830014BEA1 /* gray_texture_bg.png */,
 				791C8AC81187975C00DA4139 /* communique-Info.plist */,
 				7920402C1182185E003A8FDC /* main_left_button_default.png */,
@@ -359,7 +362,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Sugar Creek Baptist Church";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "communique" */;
@@ -417,6 +420,7 @@
 				792040331182185E003A8FDC /* main_right_button_selected.png in Resources */,
 				791C8AC91187975C00DA4139 /* communique-Info.plist in Resources */,
 				79EA91FA1189F5830014BEA1 /* gray_texture_bg.png in Resources */,
+				A0F608811566CDA700EDFE65 /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

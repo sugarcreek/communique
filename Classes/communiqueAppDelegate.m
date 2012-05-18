@@ -26,6 +26,7 @@
 #import "NewsViewController.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
+#import "MWFeedParser.h"
 // This framework was imported so we could use the kCFURLErrorNotConnectedToInternet error code.
 #import <CFNetwork/CFNetwork.h>
 
@@ -33,7 +34,7 @@
 
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
 static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_feed.xml";
-//static NSString *const NewsFeed = @"http://feeds2.feedburner.com/churchmag";
+static NSString *const NewsFeed = @"https://github.com/sugarcreek/communique/commits/master.atom";
 
 @implementation communiqueAppDelegate
 
@@ -52,10 +53,10 @@ static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_fee
 	sermonNavConntroller.navigationBar.barStyle = UIBarStyleBlack;
 	newsNavConntroller.navigationBar.barStyle = UIBarStyleBlack;
     mediaNavConntroller.navigationBar.barStyle = UIBarStyleBlack;
-	
+    
 	if([self hasNetworkConnection])
 	{
-	
+        
 		mediaFeedLoader = [[FeedLoader alloc] init];
 		mediaFeedLoader.delegate = mediaViewController;
 		
@@ -82,6 +83,13 @@ static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_fee
 		// be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
 		//
 		NSAssert(sermonsFeedLoader.listFeedConnection != nil, @"Failure to create URL connection.");
+        
+        NSURL *newsFeedURL = [NSURL URLWithString: NewsFeed];
+        newsFeedParser = [[MWFeedParser alloc] initWithFeedURL:newsFeedURL];
+        newsFeedParser.delegate = newsViewController;
+        newsFeedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
+        newsFeedParser.connectionType = ConnectionTypeAsynchronously;
+        [newsFeedParser parse];
 		
 //		newsFeedLoader = [[FeedLoader alloc] init];
 //		newsFeedLoader.delegate = newsViewController;
@@ -112,7 +120,7 @@ static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_fee
 {
 	Boolean retVal = NO;
 	
-	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [@"www.sugarcreek.net" UTF8String]);
+	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [@"www.google.com" UTF8String]);
 
 	if(reachability!= NULL)
 	{
@@ -139,8 +147,7 @@ static NSString *const SermonMediaFeed = @"http://www.sugarcreek.tv/ip_video_fee
 
 - (void)dealloc {
     [tabBarController release];
-    
-	[newsFeedLoader release];
+	[newsFeedParser release];
 	[mediaFeedLoader release];
 	[sermonsFeedLoader release];
 	

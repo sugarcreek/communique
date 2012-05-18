@@ -87,7 +87,7 @@ Now you are ready to make the rest of your customizations.
 The Application Data
 --------------------
 
-The data used in the application are based on standard RSS feeds. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the communiqueAppDelegate.m file.
+The data used in the application are based on standard RSS feeds (News feed can be RSS or Atom)gitx. One feed for the meessages, news, and creative media.  Each feed is parsed when the application is loaded in the background using the FeedLoader class and an operation queue.  The feeds can be standard RSS feeds used for news readers or podcast feeds.  To change the feeds, just modify the urls that are static NSStrings in the communiqueAppDelegate.m file.
 
 `
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";  

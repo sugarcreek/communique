@@ -24,7 +24,7 @@
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
 
-#define kCustomRowHeight   92.0
+//#define kCustomRowHeight   92.0
 #define kCustomRowCount     7
 
 #pragma mark -
@@ -47,7 +47,9 @@
 {
 	self = [super init];
 	didRelease = NO;
-	return self;
+
+    return self;
+    
 }
 
 - (void)viewDidLoad
@@ -55,22 +57,12 @@
     [super viewDidLoad];
     
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
-    self.tableView.rowHeight = kCustomRowHeight;
+    //self.tableView.rowHeight = kCustomRowHeight;
 	self.tableView.backgroundColor = [UIColor clearColor];
     
     formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateStyle:NSDateFormatterShortStyle];
 	[formatter setTimeStyle:NSDateFormatterShortStyle];
-	parsedItems = [[NSMutableArray alloc] init];
-	self.itemsToDisplay = [NSArray array];
-    
-    NSURL *feedURL = [NSURL URLWithString:@"https://github.com/sugarcreek/communique/commits/master.atom"];
-	feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
-	feedParser.delegate = self;
-	feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
-	feedParser.connectionType = ConnectionTypeAsynchronously;
-	[feedParser parse];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -86,7 +78,6 @@
 	[formatter release];
 	[parsedItems release];
 	[itemsToDisplay release];
-	[feedParser release];
 	[imageDownloadsInProgress release];
     
     [super dealloc];
@@ -154,9 +145,9 @@
 									   reuseIdentifier:PlaceholderCellIdentifier] autorelease]; 
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.backgroundColor = [UIColor redColor];
-        NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:@"news_cell_bg" ofType:@"png"];
-        UIImage *backgroundImage = [UIImage imageWithContentsOfFile:backgroundImagePath];
-        cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
+        //NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:@"news_cell_bg" ofType:@"png"];
+        //UIImage *backgroundImage = [UIImage imageWithContentsOfFile:backgroundImagePath];
+        //cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];
     }
 	
     // Leave cells empty if there's no data yet
@@ -166,8 +157,11 @@
         MWFeedItem *item = [itemsToDisplay objectAtIndex:indexPath.row];
         
 		cell.textLabel.text = item.title ? [item.title stringByConvertingHTMLToPlainText] : @"[No Title]";
-        //cell.detailTextLabel.text = [appRecord itemDateLongStyle];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        if(item.date)
+            cell.detailTextLabel.text = [formatter stringFromDate:item.date];
+		
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 /*        // Only load cached images; defer new downloads until scrolling ends
         if (!appRecord.itemIcon)
         {
@@ -275,6 +269,8 @@
 
 - (void)feedParserDidStart:(MWFeedParser *)parser {
 	NSLog(@"Started Parsing: %@", parser.url);
+    parsedItems = [[NSMutableArray alloc] init];
+    self.itemsToDisplay = [NSArray array];	
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
@@ -284,7 +280,8 @@
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
 	NSLog(@"Parsed Feed Item: “%@”", item.title);
-	if (item) [parsedItems addObject:item];	
+    if(item)[parsedItems addObject:item];
+    NSLog(@"Items Parsed: %d", parsedItems.count);
 }
 
 - (void)feedParserDidFinish:(MWFeedParser *)parser {
@@ -297,7 +294,7 @@
 	[self.tableView reloadData];
 }
 
-- (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
+- (void)newsFeedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
 	NSLog(@"Finished Parsing With Error: %@", error);
 	self.title = @"Failed";
 	self.itemsToDisplay = [NSArray array];

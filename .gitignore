@@ -1,9 +1,22 @@
+<<<<<<< HEAD
 # Mac OS X
 *.DS_Store
 
 # Xcode
+=======
+#
+# Xcode
+#
+
+build/
+*~.nib/
+*.moved-aside
+profile
+>>>>>>> MWFeedParser
 *.pbxuser
+!default.pbxuser
 *.mode1v3
+<<<<<<< HEAD
 *.mode2v3
 *.perspectivev3
 *.xcuserstate
@@ -19,6 +32,29 @@ xcuserdata/
 MANIFEST
 dist/
 build/
+=======
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspective
+!default.perspective
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+#
+# OS X noise
+#
+
+.DS_Store
+Icon
+.Spotlight-V100
+.Trashes
+>>>>>>> MWFeedParser
 
 # Backup files
 *~.nib

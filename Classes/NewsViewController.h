@@ -23,12 +23,18 @@
 
 #import <UIKit/UIKit.h>
 #import "IconDownloader.h"
-#import "FeedLoader.h"
+#import "MWFeedParser.h"
 #import "NewsDetailController.h"
 
-@interface NewsViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, FeedLoaderDelegate>
+@interface NewsViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, MWFeedParserDelegate>
 {
-	NSArray *entries;   // the main data model for our UITableView
+	// Parsing
+	NSMutableArray *parsedItems;
+	
+	// Displaying
+	NSArray *itemsToDisplay;
+	NSDateFormatter *formatter;
+    
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
 	
 	NewsDetailController *newsDetailView;
@@ -36,10 +42,9 @@
 	
 }
 
-@property (nonatomic, retain) NSArray *entries;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 @property (nonatomic, retain) IBOutlet NewsDetailController *newsDetailView;
-
+@property (nonatomic, retain) IBOutlet NSArray *itemsToDisplay;
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
 
 @end

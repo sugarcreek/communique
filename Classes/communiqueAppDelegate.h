@@ -23,6 +23,7 @@
 #import "AppRecord.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
+#import "MWFeedParser.h"
 #import "RotatingTabBarController.h"
 
 @class MediaViewController;
@@ -37,13 +38,12 @@
 	UINavigationController *newsNavConntroller;
 	UINavigationController *mediaNavConntroller;
 
-    // this view controller hosts our table of top paid apps
     MediaViewController     *mediaViewController;
 	SermonsViewController   *sermonsViewController;
 	NewsViewController		*newsViewController;
 	
 	FeedLoader *mediaFeedLoader;
-	FeedLoader *newsFeedLoader;
+	MWFeedParser *newsFeedParser;
 	FeedLoader *sermonsFeedLoader;
 	
 
